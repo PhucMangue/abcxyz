@@ -11,23 +11,28 @@ const btnbutton= document.querySelector('.js-en-vi');
         }
         btnbutton2.addEventListener('click',show2);
         
-        var d=0;
+        var d=0;var hei=200;
+        
         function rd(){
+            // document.getElementById("block").style.width='200px';
+            // document.getElementById("block").style.height='200px';
             var x=Math.random()*450;
             var y=Math.random()*450;
             // random vi tri trong ui
-            var hei=Math.random()*200;
+            hei-=25;
             //random kich thuoc 
             var sx = x + 'px';
             var sy= y +'px';
             var blhei=hei + 'px';
-            d+=1;
+            d+=100;
             //dinh dang random
             // var stringd= "Scores"+d;
             document.getElementById("block").style.marginTop= sx ;
             document.getElementById("block").style.marginLeft= sy ;
-            document.getElementById("block").style.paddingTop=blhei;
-            document.getElementById("block").style.paddingRight=blhei;
+            // document.getElementById("block").style.paddingTop=blhei;
+            // document.getElementById("block").style.paddingRight=blhei;
+            document.getElementById("block").style.width=blhei;
+            document.getElementById("block").style.height=blhei;
             document.getElementById("scores").innerHTML="Scores:"+d;
             
         }
