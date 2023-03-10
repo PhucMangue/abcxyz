@@ -26,7 +26,7 @@ function rd() {
     var sy = y + 'px';
     var blhei = hei + 'px';
     d += 100;
-    //Thuat toan
+    //Thuat toann
 
 
     document.getElementById("block").style.marginTop = sx;
