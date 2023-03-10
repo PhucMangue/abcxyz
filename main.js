@@ -12,7 +12,7 @@ function show2() {
 btnbutton2.addEventListener('click', show2);
 
 var d = 0; var hei = 200;
-const lv = document.querySelector('.js-block');
+
 
 function rd() {
     var x = Math.random() * 450;
@@ -40,40 +40,62 @@ function rd() {
 
 
 function level(){
-    if(d==1000){
+    if(d==0){
+        document.getElementById('cmt1').classList.add('openLevel1');
+    }
+
+    if(d==500){
         document.getElementById('cmt2').classList.add('openLevel2');
         document.getElementById('block').classList.remove('openblock');
         hei=200;
         document.getElementById("block").style.width = hei + "px";
         document.getElementById("block").style.height = hei + "px";
     }
-    if(d>=1000){
+    if(d>=500){
 
         lv.removeEventListener('mouseover',rd);
         lv.addEventListener('click',rd);
     }
-    if(d==2000){
+    if(d==1000){
         document.getElementById("cmt3").classList.add('openLevel3');
+        document.getElementById('block').classList.remove('openblock');
+        hei=200;
+        document.getElementById("block").style.width = hei + "px";
+        document.getElementById("block").style.height = hei + "px";
+    }
+    if(d>=1000){
+        lv.removeEventListener('click',rd);
+       lv.addEventListener('dblclick',rd);
+    }
+    if(d==1500){
+        document.getElementById('cmt4').classList.add('openLevel4');
         document.getElementById('block').classList.remove('openblock');
     }
 }
 // ---------------------------------------------------------
-    
+
+    const lv = document.querySelector('.js-block');
     lv.addEventListener('mouseover', rd);
+    //lv1
     const lv2=document.querySelector('.js-cmt2');
     function level2(){
     lv2.classList.remove('openLevel2');
     document.getElementById('block').classList.add('openblock');
     }
     lv2.addEventListener('click',level2)
+    //lv2
+    const lv3=document.querySelector('.js-cmt3');
+    function level3(){
+        document.getElementById("cmt3").classList.remove('openLevel3');
+        document.getElementById('block').classList.add('openblock');
+    }
+     lv3.addEventListener('click',level3)
 //-------------------------Che Do-----------------------------------
 
 const play = document.querySelector('.js-cmt');
 const openblock = document.querySelector('.js-block');
 function open() {
     play.classList.add('open');
-    // document.getElementById('cmt').style.display='none';
-    // document.getElementById('block').style.display='block';
     openblock.classList.add('openblock');
 }
 play.addEventListener('click', open)
