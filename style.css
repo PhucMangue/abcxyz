@@ -37,15 +37,18 @@ button.translate2.js-vi-en {
 #scores{
     position: absolute;
     z-index: 1;
-    left: 50%;
-    bottom: -40px;
+    left: 45%;
+    bottom: -45px;
     padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
 }
 .js-cmt{
     color: white;
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
-    display: flex;
+    display: block;
+    margin-top: 40%;
     width: 100%;
     height: 100%;
     /* display: none; */
@@ -66,8 +69,6 @@ button.translate2.js-vi-en {
     background-color: blueviolet;
     height: 200px;
     width: 200px;
-    /* max-width: 200px;
-    max-height: 200px; */
     min-width: 10px;
     min-height: 10px;
     position: absolute;
@@ -80,5 +81,20 @@ button.translate2.js-vi-en {
     display: block !important;
 }
 .js-cmt2.openLevel2{
+    display: block !important;
+}
+.js-cmt3{
+    color: white;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    /* display: flex; */
+    width: 100%;
+    height: 100%;
+    display: none;
+    text-align: center;
+    line-height: 700px;
+    font-size: 30px;
+}
+.js-cmt3.openLevel3{
     display: block !important;
 }

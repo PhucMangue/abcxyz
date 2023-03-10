@@ -12,6 +12,7 @@ function show2() {
 btnbutton2.addEventListener('click', show2);
 
 var d = 0; var hei = 200;
+const lv = document.querySelector('.js-block');
 
 function rd() {
     var x = Math.random() * 450;
@@ -33,17 +34,38 @@ function rd() {
     document.getElementById("block").style.marginLeft = sy;
     document.getElementById("block").style.width = blhei;
     document.getElementById("block").style.height = blhei;
-    document.getElementById("scores").innerHTML = "Scores:" + d;
+    document.getElementById("scores").innerHTML = "Scores: " + d;
+    level();
+}    
 
-    if (d == 500) {
+
+function level(){
+    if(d==1000){
         document.getElementById('cmt2').classList.add('openLevel2');
+        document.getElementById('block').classList.remove('openblock');
+        hei=200;
+        document.getElementById("block").style.width = hei + "px";
+        document.getElementById("block").style.height = hei + "px";
+    }
+    if(d>=1000){
+
+        lv.removeEventListener('mouseover',rd);
+        lv.addEventListener('click',rd);
+    }
+    if(d==2000){
+        document.getElementById("cmt3").classList.add('openLevel3');
         document.getElementById('block').classList.remove('openblock');
     }
 }
 // ---------------------------------------------------------
-    const lv = document.querySelector('.js-block');
+    
     lv.addEventListener('mouseover', rd);
-    // lv.addEventListener('click', rd);
+    const lv2=document.querySelector('.js-cmt2');
+    function level2(){
+    lv2.classList.remove('openLevel2');
+    document.getElementById('block').classList.add('openblock');
+    }
+    lv2.addEventListener('click',level2)
 //-------------------------Che Do-----------------------------------
 
 const play = document.querySelector('.js-cmt');
