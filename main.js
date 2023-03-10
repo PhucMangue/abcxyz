@@ -10,14 +10,26 @@ const btnbutton= document.querySelector('.js-en-vi');
             document.getElementById("cmt").innerHTML = "Welcome to Gray Olltwit's basic mouse skill program with 5 levels, each level has 10 stages to be completed. Press any key on the keyboard or click to start and follow the instructions in the middle of the screen. When in the program, press Q to escape or n for the next level";
         }
         btnbutton2.addEventListener('click',show2);
-
+        
+        var d=0;
         function rd(){
-            var x=Math.random()*650;
-            var y=Math.random()*650;
+            var x=Math.random()*450;
+            var y=Math.random()*450;
+            // random vi tri trong ui
+            var hei=Math.random()*200;
+            //random kich thuoc 
             var sx = x + 'px';
             var sy= y +'px';
+            var blhei=hei + 'px';
+            d+=1;
+            //dinh dang random
+            // var stringd= "Scores"+d;
             document.getElementById("block").style.marginTop= sx ;
             document.getElementById("block").style.marginLeft= sy ;
+            document.getElementById("block").style.paddingTop=blhei;
+            document.getElementById("block").style.paddingRight=blhei;
+            document.getElementById("scores").innerHTML="Scores:"+d;
+            
         }
         const bl= document.querySelector('.js-block');
         bl.addEventListener('mouseover', rd);
@@ -25,10 +37,11 @@ const btnbutton= document.querySelector('.js-en-vi');
 
 
         const play=document.querySelector('.js-cmt');
-
+        const openblock=document.querySelector('.js-block');
         function open(){
-            // play.classList.add('open');
-            document.getElementById('cmt').style.display='none';
-            document.getElementById('block').style.display='block';
+            play.classList.add('open');
+            // document.getElementById('cmt').style.display='none';
+            // document.getElementById('block').style.display='block';
+            openblock.classList.add('openblock');
         }
         play.addEventListener('click',open)

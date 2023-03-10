@@ -34,6 +34,14 @@ button.translate2.js-vi-en {
     bottom: -40px;
     padding: 10px;
 }
+#scores{
+    position: absolute;
+    z-index: 1;
+    margin-left: 47%;
+    margin-top: 830px   ;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
 .js-cmt{
     color: white;
     font-size: 20px;
@@ -50,6 +58,9 @@ button.translate2.js-vi-en {
     position: absolute;
     display: none;
 }
-#cmt .open{
+.js-cmt.open{
     display: none !important;
+}
+.js-block.openblock{
+    display: block !important;
 }
