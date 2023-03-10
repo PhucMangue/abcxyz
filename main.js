@@ -73,17 +73,35 @@ function level(){
     }
 }
 // ---------------------------------------------------------
+   //play
+   const play = document.querySelector('.js-cmt');
+    const lv0=document.querySelector('.js-cmt1');
+   function open() {
+       play.classList.add('open');
+    lv0.classList.add('openLevel1');
+   }
+   play.addEventListener('click', open)
+   //lv1
+   const lv1=document.querySelector('.js-cmt1');
+   const openblock = document.querySelector('.js-block');
+   function level1(){
+    lv1.classList.remove('openLevel1');
+    openblock.classList.add('openblock');
+   }
+   lv1.addEventListener('click',level1)
+
 
     const lv = document.querySelector('.js-block');
     lv.addEventListener('mouseover', rd);
-    //lv1
+    //lv2
     const lv2=document.querySelector('.js-cmt2');
     function level2(){
     lv2.classList.remove('openLevel2');
     document.getElementById('block').classList.add('openblock');
     }
     lv2.addEventListener('click',level2)
-    //lv2
+
+    //lv3
     const lv3=document.querySelector('.js-cmt3');
     function level3(){
         document.getElementById("cmt3").classList.remove('openLevel3');
@@ -92,10 +110,4 @@ function level(){
      lv3.addEventListener('click',level3)
 //-------------------------Che Do-----------------------------------
 
-const play = document.querySelector('.js-cmt');
-const openblock = document.querySelector('.js-block');
-function open() {
-    play.classList.add('open');
-    openblock.classList.add('openblock');
-}
-play.addEventListener('click', open)
+
