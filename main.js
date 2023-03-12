@@ -50,17 +50,21 @@ function rd() {
 
 
 //Ham giam thoi gian
-var time = 600;
+var time = 100;
 function timeout() {
     const gameover = document.querySelector('.js-done')
     if (time > 0) {
         time--;
         document.getElementById('timeout').innerHTML = "Time: " + time + "s";
-        setTimeout(timeout, 500);
+        setTimeout(timeout, 1000);
     }
     if (time == 0) {
         gameover.classList.add('openDone');
         document.getElementById('block').classList.remove('openblock');
+        document.getElementById("cmt1").classList.remove('openLevel1');
+        document.getElementById("cmt2").classList.remove('openLevel2');
+        document.getElementById("cmt3").classList.remove('openLevel3');
+        document.getElementById("cmt4").classList.remove('openLevel4');
         document.getElementById('done').innerHTML = "Game Over!!";
         document.getElementById('done').innerHTML += "<br>";
         document.getElementById('done').innerHTML += "Scores: " + d;
