@@ -18,6 +18,7 @@
     bottom: calc(50% - 350px);
     
 }
+/* dich tieng viet */
 button.translate1.js-en-vi {
     cursor: pointer;
     position: absolute;
@@ -26,6 +27,7 @@ button.translate1.js-en-vi {
     bottom: -40px;
     padding: 10px;
 }
+/* dich tieng anh */
 button.translate2.js-vi-en {
     cursor: pointer;
     position: absolute;
@@ -34,6 +36,7 @@ button.translate2.js-vi-en {
     bottom: -40px;
     padding: 10px;
 }
+/* diem so */
 #scores{
     position: absolute;
     z-index: 1;
@@ -43,6 +46,7 @@ button.translate2.js-vi-en {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
 }
+/* hen gio */
 #timeout{
     position: absolute;
     z-index: 1;
@@ -52,6 +56,7 @@ button.translate2.js-vi-en {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
 }
+/*Giới thiệu mở đầu */
 .js-cmt{
     color: white;
     font-size: 20px;
@@ -63,33 +68,20 @@ button.translate2.js-vi-en {
     text-align: center;
     /* display: none; */
 }
-
-.js-cmt1{
+.js-cmt.open{
+    display: none !important;
+}
+/* Kết thúc mở đầu */
+.js-cmt1 ,.js-cmt2 ,.js-cmt3 ,.js-cmt4 ,.js-done{
     color: white;
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
-    /* display: flex; */
     width: 100%;
     height: 100%;
     display: none;
     text-align: center;
     font-size: 30px;
     padding-top: 45%;
-}
-.js-cmt1.openLevel1{
-    display: block !important;
-}
-.js-cmt2{
-    color: white;
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    /* display: flex; */
-    width: 100%;
-    height: 100%;
-    display: none;
-    text-align: center;
-    padding-top: 45%;
-    font-size: 30px;
 }
 #block{
     background-color: blueviolet;
@@ -100,57 +92,7 @@ button.translate2.js-vi-en {
     position: absolute;
     display: none;
 }
-.js-cmt.open{
-    display: none !important;
-}
-.js-block.openblock{
-    display: block !important;
-}
-.js-cmt2.openLevel2{
-    display: block !important;
-}
-.js-cmt3{
-    color: white;
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    /* display: flex; */
-    width: 100%;
-    height: 100%;
-    display: none;
-    text-align: center;
-    padding-top: 45%;
-    font-size: 30px;
-}
-.js-cmt3.openLevel3{
-    display: block !important;
-}
-.js-cmt4{
-    color: white;
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    /* display: flex; */
-    width: 100%;
-    height: 100%;
-    display: none;
-    text-align: center;
-    padding-top: 45%;
-    font-size: 30px;
-}
-.js-cmt4.openLevel4{
-    display: block !important;
-}
-.js-done{
-    color: white;
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    /* display: flex; */
-    width: 100%;
-    height: 100%;
-    display: none;
-    text-align: center;
-    padding-top: 45%;
-    font-size: 30px;
-}
-.js-done.openDone{
+
+.js-block.openblock ,.js-cmt1.openLevel1 ,.js-cmt2.openLevel2 ,.js-cmt3.openLevel3 ,.js-cmt4.openLevel4 ,.js-done.openDone{
     display: block !important;
 }

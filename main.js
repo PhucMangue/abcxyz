@@ -50,7 +50,7 @@ function rd() {
 
 
 //Ham giam thoi gian
-var time = 100;
+var time = 60;
 function timeout() {
     const gameover = document.querySelector('.js-done')
     if (time > 0) {
@@ -58,6 +58,7 @@ function timeout() {
         document.getElementById('timeout').innerHTML = "Time: " + time + "s";
         setTimeout(timeout, 1000);
     }
+    // Game over khi het thoi gian
     if (time == 0) {
         gameover.classList.add('openDone');
         document.getElementById('block').classList.remove('openblock');
@@ -72,10 +73,6 @@ function timeout() {
 }
 
 function level() {
-    if (d == 0) {
-        document.getElementById('cmt1').classList.add('openLevel1');
-    }
-
     if (d == 1000) {
         document.getElementById('cmt2').classList.add('openLevel2');
         document.getElementById('block').classList.remove('openblock');
@@ -108,8 +105,7 @@ function level() {
     }
     if (d >= 3000) {
         lv.removeEventListener('dblclick', rd);
-        // ham level 4
-        lv.addEventListener('contextmenu',rd);
+        lv.addEventListener('contextmenu', rd);
     }
 }
 //su kien click vao block
@@ -123,14 +119,14 @@ lv.addEventListener('mouseover', rd);
 
 
 const play = document.querySelector('.js-cmt');
-const lv0 = document.querySelector('.js-cmt1');
+const cmt = document.querySelector('.js-cmt1');
 function open() {
     play.classList.add('open');
-    lv0.classList.add('openLevel1');
+    cmt.classList.add('openLevel1');
     timeout();
 }
 play.addEventListener('click', open)
-//lv1
+// Start level1
 const lv1 = document.querySelector('.js-cmt1');
 const openblock = document.querySelector('.js-block');
 function level1() {
@@ -140,7 +136,7 @@ function level1() {
 lv1.addEventListener('click', level1)
 
 
-//lv2
+// Start level2
 const lv2 = document.querySelector('.js-cmt2');
 function level2() {
     lv2.classList.remove('openLevel2');
@@ -148,7 +144,7 @@ function level2() {
 }
 lv2.addEventListener('click', level2)
 
-//lv3
+// Start level3
 const lv3 = document.querySelector('.js-cmt3');
 function level3() {
     document.getElementById("cmt3").classList.remove('openLevel3');
@@ -156,15 +152,13 @@ function level3() {
 }
 lv3.addEventListener('click', level3)
 
-//lv4
+// Start level4
 const lv4 = document.querySelector('.js-cmt4');
-
 function level4() {
     lv4.classList.remove('openLevel4');
     document.getElementById('block').classList.add('openblock');
 }
-
 lv4.addEventListener('click', level4)
-//-------------------------Che Do-----------------------------------
+
 
 
