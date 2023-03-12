@@ -12,7 +12,6 @@ function show2() {
 btnbutton2.addEventListener('click', show2);
 
 
-
 //Ham tat menu khi an chuot phai
 
 const offmenu = document.getElementById("ui");
@@ -20,35 +19,40 @@ offmenu.addEventListener("contextmenu", function (e) {
     e.preventDefault()
 });
 
+//mau ngau nhien 
+
+function random_bg_color() {
+    var x = Math.floor(Math.random() * 256);
+    var y = Math.floor(Math.random() * 256);
+    var z = Math.floor(Math.random() * 256);
+    var bgColor = "rgb(" + x + "," + y + "," + z + ")";
+    console.log(bgColor);
+    lv.style.background = bgColor;
+     lv.style.color=bgColor;
+    }
+
+
 var d = 0; var hei = 200;
 function rd() {
+    //ham mau ngau nhien
     var x = Math.random() * (490 - hei);
     var y = Math.random() * (490 - hei);
     // random vi tri trong ui
-
     hei -= 25;
     //giam kich thuoc 
-
-
-
     var sx = x + 'px';
     var sy = y + 'px';
     var blhei = hei + 'px';
     d += 100;
     //Thuat toann
-
-
     document.getElementById("block").style.marginTop = sx;
     document.getElementById("block").style.marginLeft = sy;
     document.getElementById("block").style.width = blhei;
     document.getElementById("block").style.height = blhei;
     document.getElementById("scores").innerHTML = "Scores: " + d;
     level();
+    random_bg_color();
 }
-
-
-
-
 //Ham giam thoi gian
 var time = 60;
 function timeout() {
@@ -79,6 +83,7 @@ function level() {
         hei = 200;
         document.getElementById("block").style.width = hei + "px";
         document.getElementById("block").style.height = hei + "px";
+        
     }
     if (d >= 1000) {
 
@@ -91,6 +96,7 @@ function level() {
         hei = 200;
         document.getElementById("block").style.width = hei + "px";
         document.getElementById("block").style.height = hei + "px";
+        
     }
     if (d >= 2000) {
         lv.removeEventListener('click', rd);
@@ -111,13 +117,8 @@ function level() {
 //su kien click vao block
 const lv = document.querySelector('.js-block');
 lv.addEventListener('mouseover', rd);
-
-
-
 // ---------------------------------------------------------
 //play
-
-
 const play = document.querySelector('.js-cmt');
 const cmt = document.querySelector('.js-cmt1');
 function open() {
