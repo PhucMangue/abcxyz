@@ -59,7 +59,7 @@ function timeout() {
     const gameover = document.querySelector('.js-done')
     if (time > 0) {
         time--;
-        document.getElementById('timeout').innerHTML = "Time: " + time + "s";
+        document.getElementById('timeOut').innerHTML = "Time: " + time + "s";
         setTimeout(timeout, 1000);
     }
     // Game over khi het thoi gian
@@ -73,6 +73,8 @@ function timeout() {
         document.getElementById('done').innerHTML = "Game Over!!";
         document.getElementById('done').innerHTML += "<br>";
         document.getElementById('done').innerHTML += "Scores: " + d;
+        document.getElementById('done').innerHTML += "<br>";
+        document.getElementById('done').innerHTML += "You can F5 or Click on Game Play to ReStart";
         gameover.addEventListener('click',function(e){
             location.reload();
         })
