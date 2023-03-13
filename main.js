@@ -33,7 +33,9 @@ function random_bg_color() {
 
 
 var d = 0; var hei = 200;
-function rd() {
+function rd() {      
+    d += 100;
+    document.getElementById("scores").innerHTML = "Scores: " + d; 
     level();
     x = Math.random() * (700 - hei);
     y = Math.random() * (700 - hei);
@@ -43,14 +45,12 @@ function rd() {
     var sx = x + 'px';
     var sy = y + 'px';
     var blhei = hei + 'px';
-    d += 100;
+    
     //Thuat toann
     document.getElementById("block").style.marginTop = sx;
     document.getElementById("block").style.marginLeft = sy;
     document.getElementById("block").style.width = blhei;
     document.getElementById("block").style.height = blhei;
-    document.getElementById("scores").innerHTML = "Scores: " + d;
-    
     random_bg_color();
 }
 //Ham giam thoi gian
@@ -73,6 +73,9 @@ function timeout() {
         document.getElementById('done').innerHTML = "Game Over!!";
         document.getElementById('done').innerHTML += "<br>";
         document.getElementById('done').innerHTML += "Scores: " + d;
+        gameover.addEventListener('click',function(e){
+            location.reload();
+        })
     }
 }
 
@@ -83,33 +86,26 @@ function level() {
         hei = 200;
         document.getElementById("block").style.width = hei + "px";
         document.getElementById("block").style.height = hei + "px";
-        
-    }
-    if (d >= 1000) {
-
         lv.removeEventListener('mouseover', rd);
         lv.addEventListener('click', rd);
     }
+
     if (d == 2000) {
         document.getElementById("cmt3").classList.add('openLevel3');
         document.getElementById('block').classList.remove('openblock');
         hei = 200;
         document.getElementById("block").style.width = hei + "px";
         document.getElementById("block").style.height = hei + "px";
-        
-    }
-    if (d >= 2000) {
         lv.removeEventListener('click', rd);
         lv.addEventListener('dblclick', rd);
     }
+
     if (d == 3000) {
         document.getElementById('cmt4').classList.add('openLevel4');
         document.getElementById('block').classList.remove('openblock');
         hei = 200;
         document.getElementById("block").style.width = hei + "px";
         document.getElementById("block").style.height = hei + "px";
-    }
-    if (d >= 3000) {
         lv.removeEventListener('dblclick', rd);
         lv.addEventListener('contextmenu', rd);
     }
