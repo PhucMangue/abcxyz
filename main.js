@@ -26,7 +26,7 @@ function random_bg_color() {
     var y = Math.floor(Math.random() * 256);
     var z = Math.floor(Math.random() * 256);
     var bgColor = "rgb(" + x + "," + y + "," + z + ")";
-    console.log(bgColor);
+    // console.log(bgColor);
     lv.style.background = bgColor;
      lv.style.color=bgColor;
     }
@@ -34,9 +34,9 @@ function random_bg_color() {
 
 var d = 0; var hei = 200;
 function rd() {
-    //ham mau ngau nhien
-    var x = Math.random() * (490 - hei);
-    var y = Math.random() * (490 - hei);
+    level();
+    x = Math.random() * (700 - hei);
+    y = Math.random() * (700 - hei);
     // random vi tri trong ui
     hei -= 25;
     //giam kich thuoc 
@@ -50,7 +50,7 @@ function rd() {
     document.getElementById("block").style.width = blhei;
     document.getElementById("block").style.height = blhei;
     document.getElementById("scores").innerHTML = "Scores: " + d;
-    level();
+    
     random_bg_color();
 }
 //Ham giam thoi gian
